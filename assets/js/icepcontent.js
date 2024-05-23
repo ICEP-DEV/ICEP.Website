@@ -1,4 +1,4 @@
 
 function application(){
-    window.open("https://forms.office.com/r/ns7viXVsyy")
+    window.open("https://forms.gle/ACfRkMGX8wL43GR79")
   }
