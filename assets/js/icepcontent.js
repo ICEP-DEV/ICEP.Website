@@ -24,7 +24,9 @@ function submitApplication() {
   var houseNo = document.getElementById("houseNo").value;
   var streetName = document.getElementById("streetName").value;
   var accpt = document.getElementById("accpt").value;
+  var gender = document.getElementById("gender").value;
 
+  
   var alphatesSpace = /^[a-zA-Z]+$/;
   var digits = /^\d+$/;
 
