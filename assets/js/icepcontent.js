@@ -8,6 +8,7 @@ function application() {
   window.open("https://forms.gle/ACfRkMGX8wL43GR79")
 }
 
+
 // submit application
 function submitApplication() {
   var idno = document.getElementById("idno").value;
@@ -18,6 +19,7 @@ function submitApplication() {
   var email = document.getElementById("email").value;
   var phoneNo = document.getElementById("phoneNo").value;
   var campus = document.getElementById("campus").value;
+  var course = document.getElementById("course").value;
   var outstanding = document.getElementById("outstanding").value;
   var town = document.getElementById("town").value;
   var code = document.getElementById("code").value;
@@ -26,10 +28,13 @@ function submitApplication() {
   var accpt = document.getElementById("accpt").value;
   var gender = document.getElementById("gender").value;
 
-  
+
   var alphatesSpace = /^[a-zA-Z]+$/;
   var digits = /^\d+$/;
 
+  console.log(campus);
+  console.log(course);
+  //console.log(filterCampuses[0].campus_id)
   /*
   
   //  validate firstname
@@ -85,19 +90,13 @@ if (dob == "") {
 }
 */
 
-if(studNo == ""){
-  alert("Enter student number");
-  return;
-}
-if(!studNo.match(digits)){
-  alert("Student number should contain only number")
-}
-
-
-
-
-
-
+  if (studNo == "") {
+    alert("Enter student number");
+    return;
+  }
+  if (!studNo.match(digits)) {
+    alert("Student number should contain only number")
+  }
 
 
   var data = {
@@ -153,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fName.innerText = `File Name: ${file.name}`;
 
           }
+          fInput = "";
         };
         setTimeout(updateProgress, interval);
       };
@@ -163,3 +163,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 })
+
+// get all open courses and campuses
+function getCampusDataAndSpecializations() {
+  fetch('http://localhost:3001/api/getCampuses')
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        var AllCampuses = data.results
+        var campuses = `<option value='' disabled selected>---Select Campus---</option>`
+        AllCampuses.forEach(campus => {
+          campuses += `<option value='${campus.campus_id}' >${campus.campus_name}</option> `;
+        })
+        document.getElementById('campus').innerHTML = campuses;
+      }
+      else {
+        console.log(data.message)
+        alert(data.message)
+      }
+      console.log(AllCampuses)
+    })
+    .catch(error => console.error('Error:', error));
+
+  fetch('http://localhost:3001/api/getCourse')
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        var AllCourses = data.results
+        var courses = `<option value='' disabled selected>---Select Course---</option>`
+        AllCourses.forEach(course => {
+          courses += `<option value='${course.course_id}' >${course.course_name}</option> `;
+        })
+        document.getElementById('course').innerHTML = courses;
+      }
+      else {
+        console.log(data.message)
+        alert(data.message)
+      }
+      console.log(data)
+    })
+    .catch(error => console.error('Error:', error));
+
+
+}
+
+
+getCampusDataAndSpecializations()

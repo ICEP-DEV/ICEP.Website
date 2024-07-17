@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
+    <title>ICEP online Application</title>
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -16,7 +16,6 @@
     <!-- MDB -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css" />
-
 
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/progressbar.css" rel="stylesheet">
@@ -71,15 +70,19 @@
                 <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="campus">Campus</label>
                     <select class="form-control" id="campus">
-                        <option disabled selected>---Select Campus---</option>
-                        <option>Soshanguve</option>
-                        <option>Emalahleni</option>
-                        <option>Polokwane</option>
+                        <!-- campus options here -->
+                    </select>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="course">Course</label>
+                    <select class="form-control" id="course">
+                        <!-- course options here -->
                     </select>
                 </div>
                 <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="outstanding">Oustanding Modules</label><br />
-                    &ensp;<input type="radio" name="outstanding" id="outstanding" value="Yes"><label> Yes</label>
+                    &ensp;<input type="radio" name="outstanding" id="outstanding" checked value="Yes"><label>
+                        Yes</label>
                     &ensp;<input type="radio" name="outstanding" id="outstanding" value="No"><label> No</label>
                 </div>
                 <div data-mdb-input-init class="form-outline mb-4">
@@ -115,10 +118,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- uploda recommendation ltter -->
                 <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="fileInput">Upload CV</label>
-                    &ensp;<input type="file" name="fileInput" id="fileInput" hidden><br />
-                    <label for="fileInput"
+                    &ensp;<input type="file" onchange="uploadCV()" id="fileInputCV" hidden /><br />
+                    <!-- &ensp;<input type="file" name="fileInput" id="fileInput" hidden><br /> -->
+                    <label for="fileInputCV"
                         style="margin-top: 12px; color: #0d0909;letter-spacing: 1.5px; background-color: #107fee; padding: 5px 10px; border-radius: 10px;">
                         <i class="fas fa-cloud-upload-alt"></i> Upload CV
                     </label>
@@ -128,9 +133,24 @@
                         <div class="progress-text" id="progressText"></div>
                     </div>
                 </div>
+                <!-- uploda recommendation ltter -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="fileInput">Upload Recomdation Letter</label>
+                    <!-- &ensp;<input type="file" name="fileInput" id="fileInput" hidden><br /> -->
+                    &ensp;<input type="file" onchange="uploadRecomandationLetter()" id="fileInputRecommendation" hidden /><br />
+                    <label for="fileInputRecommendation"
+                        style="margin-top: 12px; color: #0d0909;letter-spacing: 1.5px; background-color: #107fee; padding: 5px 10px; border-radius: 10px;">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload Recomdation Letter
+                    </label>
+                    &ensp;<label id="fileName">No File</label>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="progress-text" id="progressText"></div>
+                    </div>
+                </div>
                 <!-- Checkbox -->
                 <div class="form-check d-flex mb-2">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="accpt" checked />
+                    <input class="form-check-input me-2" type="checkbox" value="" id="accpt" />
                     <label class="form-check-label" for="accpt">
                         Create an account?
                     </label>
