@@ -35,37 +35,37 @@ function submitApplication() {
   console.log(campus);
   console.log(course);
   //console.log(filterCampuses[0].campus_id)
-  /*
-  
+
+
   //  validate firstname
-  if(firstname == ""){
+  if (firstname == "") {
     alert("Enter firstname")
     return;
   }
-  if(firstname.length > 3){
-    alert("firstname should contain at least 3 characters")
+  // if (firstname.length > 3) {
+  //   alert("firstname should contain at least 3 characters")
+  //   return;
+  // }
+
+  // if (!alphatesSpace.test(firstname)) {
+  //   alert("firstname should contail alphates/letters only")
+  //   return;
+  // }
+
+  //  validate lastname
+  if (lastname == "") {
+    alert("Enter lastname")
     return;
   }
+  // if (lastname.length > 3) {
+  //   alert("lastname should contain at least 3 characters")
+  //   return;
+  // }
 
-  if(!alphatesSpace.test(firstname)){
-    alert("firstname should contail alphates/letters only")
-    return;
-  }
-
-    //  validate lastname
-    if(lastname == ""){
-      alert("Enter lastname")
-      return;
-    }
-    if(lastname.length > 3){
-      alert("lastname should contain at least 3 characters")
-      return;
-    }
-  
-    if(!alphatesSpace.test(lastname)){
-      alert("lastname should contail alphates/letters only")
-      return;
-    }
+  // if (!alphatesSpace.test(lastname)) {
+  //   alert("lastname should contail alphates/letters only")
+  //   return;
+  // }
 
 
   // Validate SA ID
@@ -84,11 +84,11 @@ function submitApplication() {
   }
 
 
-if (dob == "") {
-  alert("Select date of birth")
-  return;
-}
-*/
+  if (dob == "") {
+    alert("Select date of birth")
+    return;
+  }
+
 
   if (studNo == "") {
     alert("Enter student number");
@@ -100,7 +100,7 @@ if (dob == "") {
 
 
   var data = {
-    idno, firstname, lastname, dob, studNo, email, phoneNo, campus, outstanding, town, code, houseNo, streetName, fileName, accpt
+    idno, firstname, lastname, dob, studNo, email, phoneNo, gender, campus, outstanding, town, code, houseNo, streetName, fileName, accpt
   }
 
   console.log(data);
@@ -109,15 +109,15 @@ if (dob == "") {
 
 // uploading files
 document.addEventListener('DOMContentLoaded', () => {
-  const fInput = document.getElementById('fileInput');
-  const pBar = document.getElementById('progressBar');
-  const pText = document.getElementById('progressText')
-  const fName = document.getElementById('fileName');
-
+  var fInput = document.getElementById('fileInput');
+  var pBar = document.getElementById('progressBar');
+  var pText = document.getElementById('progressText')
+  var fName = document.getElementById('fileName');
+  console.log(fInput);
   fInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
-    fileName = file;
-    if (file && file.type.startsWith('image/')) {
+
+    if (file && file.type.includes('/pdf')) {
       const reader = new FileReader();
       reader.onloadstart = () => {
         pBar.style.width = '0%';

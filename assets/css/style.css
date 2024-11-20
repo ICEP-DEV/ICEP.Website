@@ -9,9 +9,18 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
+html, body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+/* Prevent page scrolling */
+body {
+  overflow: hidden;
 }
 
 a {
@@ -33,6 +42,9 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+ h5 {
+   text-align: center;
+ }
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -1458,3 +1470,329 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+/* Full-screen background container */
+.full-screen-background {
+  position: fixed;              /* Fix position to cover the whole screen */
+  top: 0;
+  left: 0;
+  width: 100vw;                /* Full viewport width */
+  height: 100vh;               /* Full viewport height */
+  overflow: hidden;            /* Prevent overflow */
+  z-index: 1;                 /* Ensure this is above other elements */
+  background: #022C36;
+  
+}
+
+/* Left half of the background */
+.left-half {
+  position: absolute;          /* Position absolutely within the parent */
+  top: 0;
+  left: 0;                    /* Align to the left */
+  width: 50%;                 /* Half the width */
+  height: 100%;               /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay with opacity */
+  background-size: cover;      /* Cover the entire half */
+  background-position: center;  /* Center the image */
+  z-index: 3;                  /* Position behind the image */
+  animation: slideLeft 1s forwards; /* Slide animation */
+  animation-delay: 0.2s; 
+}
+
+/* Right half of the background */
+.right-half {
+  position: absolute;          /* Position absolutely within the parent */
+  top: 0;
+  right: 0;                   /* Align to the right */
+  width: 50%;                 /* Half the width */
+  height: 100%;               /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay with opacity */
+  background-size: cover;      /* Cover the entire half */
+  background-position: center;  /* Center the image */
+  z-index: 3;                  /* Position behind the image */
+  animation: slideRight 1s forwards; /* Slide animation */
+  animation-delay: 0.2s;  
+}
+
+/* Keyframes for sliding left */
+@keyframes slideLeft {
+  from {
+      transform: translateX(0); /* Start centered */
+  }
+  to {
+      transform: translateX(-100%); /* Slide out to the left */
+  }
+}
+
+/* Keyframes for sliding right */
+@keyframes slideRight {
+  from {
+      transform: translateX(0); /* Start centered */
+  }
+  to {
+      transform: translateX(100%); /* Slide out to the right */
+  }
+}
+
+
+
+
+
+
+/* Form container styling */
+.form-container {
+  width: 100vw;             /* Full viewport width */
+  max-width: 1500px;        /* Optional: set a larger max-width */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;         /* Margin to bring the form down slightly */
+  position: relative;        /* Create a positioning context for z-index */
+  z-index: 2;  
+  opacity: 0;                     /* Start transparent */
+  animation: zoomIn 2s forwards; /* Add fade-in animation */
+  animation-delay: 0.1s;           /* Delay the animation by 2 seconds */
+  height: 100vh;
+  overflow-y: auto;
+  
+}
+
+/* Ensure card takes full width of container */
+.form-container .card {
+  width: 100%;              /* Make card take full width of container */
+  max-width: 100%;          /* Override Bootstrap max-width if any */
+  background: linear-gradient(to left top, #022C36, black);
+  border: 5px solid rgba(0, 0, 0, 0.8); /* Solid border with color and transparency */
+  border-radius: 20px;           /* Optional: rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for depth */
+  
+}
+
+/* Adjust form elements for responsiveness */
+.form-container .form-label,
+.form-container .form-control,
+.form-container .btn,
+.form-container .card-header h5,
+.form-container .form-check-label {
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+}
+
+/* Reduce font size and padding for the form content */
+.form-container .form-label {
+  font-size: 1rem; /* Reduce label font size */
+  font-weight: bold;
+  color: black;
+}
+
+.form-container .form-control {
+  font-size: 1rem; /* Reduce input text size */
+  padding: 0.4rem 0.5rem; /* Reduce padding inside input fields */
+  border: 4px solid white;
+  border-radius: 6px; /* Optional: add rounded corners for better appearance */
+  font-weight: 550;
+ 
+}
+
+.form-container .btn {
+  
+  background: linear-gradient(to right, #022C36, black);
+  color: white;
+  border: none;
+}
+
+.form-container .card-header h5 {
+  font-size: 2.5rem; /* Reduce header font size */
+  color: white;
+  font-weight: bolder;
+}
+
+.form-container .form-check-label {
+  font-size: 0.85rem; /* Reduce checkbox label size */
+}
+.form-container .card-header {
+  background-color: transparent; /* Remove background color */
+  border: none;
+}
+
+/* Responsive styling for left and right columns */
+.left-column .form-label,
+.left-column-container,
+.right-column-container {
+  color: white;
+}
+
+.left-column .form-label {
+  color: white;
+}
+
+.left-column
+{
+  margin-top: 50px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: space-between;
+  
+  flex-wrap: wrap;     /* Allow wrapping on smaller screens */
+  gap: 10px;
+}
+
+.right-column-container {
+  border: 3px solid black;         /* Adds a border around the container */
+  background-color: rgba(255, 252, 252, 0.8);
+  width: 40%;
+  max-width: 100%;
+  border-radius: 20px;             /* Optional: rounds the corners */
+  margin-left: 70px; /* Adjust this value as needed to move the container */
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px; /* You can adjust the max width as needed */
+  
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .parent-container {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    align-items: center;
+  }
+
+  .form-container {
+    margin-top: 20px;
+    padding: 10px;              /* Adjust padding */
+  }
+  
+  .left-column, .right-column-container {
+    width: 100%; /* Full width on smaller screens */
+    margin-left: 0;
+    margin-top: 10px; /* Add some spacing if needed */
+  }
+
+  .form-container .card {
+    width: 100%;                /* Ensure the card also resizes */
+    background: linear-gradient(to left bottom, #022C36, black);
+  }
+   /* Optional: Adjust margin for better spacing on small screens */
+   .form-outline.mb-4 {
+    margin-bottom: 15px;
+  }
+}
+
+/* Set input fields and select elements in the right column to full width */
+.right-column-container .form-control {
+  width: 100%;
+  max-width: 100%;
+}
+.right-column-container {
+  border: 3px solid black;         /* Adds a border around the container */
+  background-color: rgba(255, 252, 252, 0.8);
+}
+
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+  0% {
+      opacity: 0;               /* Start transparent */
+      transform: scale(0.5);   /* Start smaller */
+  }
+  100% {
+      opacity: 1;               /* Fully opaque */
+      transform: scale(1);      /* End at normal size */
+  }
+}
+
+/* Center logo with a bottom margin */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+/* Logo styling */
+.logo-image {
+  max-width: 180px;         /* Restrict logo size */
+  height: auto;
+}
+
+/* New styling to position logo at the top middle of the page */
+.logo-position {
+  display: flex;
+  justify-content: center;  /* Center the logo horizontally */
+  align-items: center;      /* Center the logo vertically within the container */
+  position: absolute;       /* Use absolute positioning */
+  top: -25px;                /* Adjust the distance from the top */
+  left: 95%;                /* Move to the center horizontally */
+  transform: translateX(-50%); /* Offset by half its width to center it */
+  z-index: 3;               /* Ensure the logo appears above the background */
+  border: 4px solid black;
+  border-radius: 6px; /* Optional: add rounded corners for better appearance */
+  background: white;
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+  .form-container .card-header h5 {
+    font-size: 1.2rem; /* Adjust header font size */
+  }
+  
+  .form-container .btn {
+    font-size: 0.7rem;
+    background-color: #022C36;
+    background: linear-gradient(to left, #022C36, black);
+  }
+  
+  .form-container .form-control {
+    font-size: 0.88rem;
+    border: 4px solid white;
+    border-radius: 6px; /* Optional: add rounded corners for better appearance */
+    
+  }
+
+  .form-container .form-label {
+    font-size: 0.88rem; /* Reduce label font size */
+    font-weight: bold;
+    color: black;
+  }
+  .form-container label {
+    font-size: 0.88rem; /* Reduce label font size */
+    font-weight: bold;
+    color: black;
+  }
+
+  .left-column .form-label {
+    color: white;
+  }
+  
+  .full-screen-background {
+    background: white;
+    
+  }
+  
+  .logo-position {
+    top: 5px; /* Adjust top position for very small screens */
+    width: 85px;
+    left: 45px;
+  }
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Logo styling */
+  .logo-image {
+    width: 85px;         /* Restrict logo size */
+    height: auto;
+  }
+}
+

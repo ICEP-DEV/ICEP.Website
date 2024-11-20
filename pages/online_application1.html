@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>ICEP online Application</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css" />
+
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/progressbar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div style="margin: auto;">
+        <div class="card mb-4">
+            <div class="card-header py-3">
+                <h5 class="mb-0">Application</h5>
+            </div>
+            <div class="card-body">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="firstname">First name</label>
+                    <input type="text" id="firstname" class="form-control" placeholder="eg. John" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="lastname">Last name</label>
+                    <input type="text" id="lastname" class="form-control" placeholder="eg. Mahlangu" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="idno">Id number</label>
+                    <input type="text" id="idno" class="form-control" placeholder="eg 9999999999999" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="dob">Date of birth</label>
+                    <input type="date" id="dob" class="form-control" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="studNo">Student Number</label>
+                    <input type="text" id="studNo" class="form-control" placeholder="eg. 111111111" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="text" id="email" class="form-control" placeholder="eg. mahlangu.joehn@tut.ac.za" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="phoneNo">Phone number</label>
+                    <input type="text" id="phoneNo" class="form-control" placeholder="eg 0123456789" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="campus">Gender</label>
+                    <select class="form-control" id="gender">
+                        <option disabled selected>---Select Gender---</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="campus">Campus</label>
+                    <select class="form-control" id="campus">
+                        <!-- campus options here -->
+                    </select>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="course">Course</label>
+                    <select class="form-control" id="course">
+                        <!-- course options here -->
+                    </select>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="outstanding">Oustanding Modules</label><br />
+                    &ensp;<input type="radio" name="outstanding" id="outstanding" checked value="Yes"><label>
+                        Yes</label>
+                    &ensp;<input type="radio" name="outstanding" id="outstanding" value="No"><label> No</label>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="houseNo">Home Address</label>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="houseNo">House No</label>
+                                <input type="text" id="houseNo" class="form-control" placeholder="eg. 3698" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="streetName">Street name</label>
+                                <input type="text" id="streetName" class="form-control" placeholder="eg. letswalo" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="town">Town/Surburb</label>
+                                <input type="text" id="town" class="form-control" placeholder="eg. Soshanguve" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="code">Postal Code</label>
+                                <input type="text" id="code" class="form-control" placeholder="eg. 0123" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- uploda recommendation ltter -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="fileInput">Upload CV</label>
+                    &ensp;<input type="file" onchange="uploadCV()" id="fileInputCV" hidden /><br />
+                    <!-- &ensp;<input type="file" name="fileInput" id="fileInput" hidden><br /> -->
+                    <label for="fileInputCV"
+                        style="margin-top: 12px; color: #0d0909;letter-spacing: 1.5px; background-color: #107fee; padding: 5px 10px; border-radius: 10px;">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload CV
+                    </label>
+                    &ensp;<label id="fileName">No File</label>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="progress-text" id="progressText"></div>
+                    </div>
+                </div>
+                <!-- uploda recommendation ltter -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="fileInput">Upload Recomdation Letter</label>
+                    <!-- &ensp;<input type="file" name="fileInput" id="fileInput" hidden><br /> -->
+                    &ensp;<input type="file" onchange="uploadRecomandationLetter()" id="fileInputRecommendation" hidden /><br />
+                    <label for="fileInputRecommendation"
+                        style="margin-top: 12px; color: #0d0909;letter-spacing: 1.5px; background-color: #107fee; padding: 5px 10px; border-radius: 10px;">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload Recomdation Letter
+                    </label>
+                    &ensp;<label id="fileName">No File</label>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="progress-text" id="progressText"></div>
+                    </div>
+                </div>
+                <!-- Checkbox -->
+                <div class="form-check d-flex mb-2">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="accpt" />
+                    <label class="form-check-label" for="accpt">
+                        Create an account?
+                    </label>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <button class="btn btn-block btn-primary" onclick="submitApplication()">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="../assets/js/icepcontent.js"></script>
