@@ -4,714 +4,346 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>ICEP</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Index - ICEP</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/ICEP-Logo.png" rel="icon">
-  <link href="assets/img/ICEP-Logo.png" rel="ICEP-Logo">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Green
-  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Template Name: Moderna
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
 
-<body>
+<body class="index-page">
 
-  <!-- ======= Top Bar ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/ICEP-Logo.png" alt="ICEP Logo" class="logo-img">
+       
+      </a>
 
-      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/ICEP-Logo.png" width="100px" height="100px"
-            alt="icep logo" /></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+      <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> -->
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-          <!-- <li><a class="getstarted scrollto" href="#" onclick="application()">Apply</a></li> -->
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+         
+          
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <main class="main">
 
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-      <div class="carousel-inner" role="listbox">
+      <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active"
-          style="background-image: url(assets/img/ICEP-Logo.png); background-size: auto;">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown" style="color: black;">Welcome to <span>ICEP</span></h2>
-              <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto" >Read More</a> -->
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"
-                onclick="application()">Apply</a>
+      <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="container position-relative">
+
+          <div class="carousel-item active">
+            <div class="carousel-container">
+              <h2>Welcome to ICEP</h2>
+              <p>We’re the Informatics Community Engagement Programme, proudly launched by TUT’s Informatics Department. At ICEP, we help students who’ve finished their theory modules gain real-world experience through internships that focus on the latest tech, tools, and industry practices.</p>
+              <a href="#about" class="btn-get-started">Read More</a>
             </div>
-          </div>
+          </div><!-- End Carousel Item -->
+
+          <div class="carousel-item">
+            <div class="carousel-container">
+              <h2>Let’s shape the future, together.</h2>
+              <p>From web and mobile development to business analysis and software testing, our team is all about building skills, solving problems, and making a real impact.</p>
+              <a href="#about" class="btn-get-started">Read More</a>
+            </div>
+          </div><!-- End Carousel Item -->
+
+          <div class="carousel-item">
+            <div class="carousel-container">
+              <h2>Apply Here</h2>
+              <p>Ready to take the next step in your academic or professional journey? Our application process is simple and designed to get you started quickly. Whether you're a first-time applicant or looking to expand your knowledge and skills, we welcome you to join a dynamic learning environment that empowers growth and innovation. Click below to begin your application today and shape a better future with us.</p>
+              <a href="forms/icep_form/online_application.html" class="btn-get-started">Apply</a>
+
+            </div>
+          </div><!-- End Carousel Item -->
+
+          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          </a>
+
+          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          </a>
+
+          <ol class="carousel-indicators"></ol>
+
         </div>
-
-        <!-- Slide 2
-        <div class="carousel-item" style="background-image: url(assets/img/ICEP-Logo.png)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
-                Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        Slide 3
-        <div class="carousel-item" style="background-image: url(assets/img/ICEP-Logo.png)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
-                Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div> -->
 
       </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
+    </section><!-- /Hero Section -->
 
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
+    <!-- Featured Services Section with Carousel -->
+<section id="featured-services" class="featured-services section">
+  <div class="container" data-aos="fade-up">
+    <div class="swiper featured-services-slider">
+      <div class="swiper-wrapper">
 
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About Us</h2>
-          <p>ICEP is a Informatics Community Engagement Programme initiated by the informatics department of TUT. initial was
-            engendered to,
-            amongst other objectives, assist students,who’ve completed all of their theoretical modules, obtain an
-            internship.The
-            internship exposes said students toindustry experiences and operations.</p>
+        <!-- Service Slide -->
+        <div class="swiper-slide">
+          <div class="service-item item-cyan position-relative">
+            <div class="icon"><i class="bi bi-laptop"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Web Development</h3></a>
+            <p>We specialize in building fast, secure, and responsive websites tailored to your business needs.</p>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2">
-            <iframe width="90%" height="400px" src="https://www.youtube.com/embed/_91tr1Rgg0A" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="swiper-slide">
+          <div class="service-item item-orange position-relative">
+            <div class="icon"><i class="bi bi-phone"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Mobile Development</h3></a>
+            <p>We develop high-performance, user-friendly mobile applications for both iOS and Android platforms.</p>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item item-teal position-relative">
+            <div class="icon"><i class="bi bi-graph-up"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Business Analyst</h3></a>
+            <p>Our Business Analysts work with clients to understand goals, identify challenges, and craft actionable solutions.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item item-red position-relative">
+            <div class="icon"><i class="bi bi-bug"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Software Testing</h3></a>
+            <p>We provide comprehensive manual and automated testing services to ensure your software is bug-free and reliable.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item item-cyan position-relative">
+            <div class="icon"><i class="bi bi-controller"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Game Development</h3></a>
+            <p>We create engaging, high-quality games across mobile, desktop, and console platforms.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item item-orange position-relative">
+            <div class="icon"><i class="bi bi-robot"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Artificial Intelligence (AI)</h3></a>
+            <p>We integrate AI solutions into business systems to boost efficiency and decision-making.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item item-teal position-relative">
+            <div class="icon"><i class="bi bi-cpu"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Machine Learning (ML)</h3></a>
+            <p>We build intelligent, data-driven systems that learn and improve over time.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item item-red position-relative">
+            <div class="icon"><i class="bi bi-braces"></i></div>
+            <a href="service-details.html" class="stretched-link"><h3>Game Programming</h3></a>
+            <p>Game programming focuses on the technical implementation of game mechanics and systems.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Add Pagination -->
+      <div class="swiper-pagination mt-4"></div>
+
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/group2.jpeg" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>CEP is an informatics Community Engagement Programme initiated by the informatics</h3>
             <p class="fst-italic">
-              There, they are both educated apropos of the latest in industry technologies, tools, methodologies,
-              frameworks, and systems; but also, in the internalisation and application of technical, interpersonal, and
-              conceptual
-              knowledge.<br>
-              <br>
-              Additionally, ICEP aims to improve the conditions of townships through the implementation and continual
-              support of
-              I.T solutions This aspect both proliferating upon the state-of-living for residents; but, also
-              facilitating the
-              creation of entities to continue constructive social and commercial operations.<br>
-              <br>
-              Moreover, ICEP assists the university by providing rapid system solutions to aid with impediments ebbing
-              productivity.<br>
-              This is performed through implementation of a well-structured system of operations and established
-              business
-              rules.<br>
+              ICEP (Informatics Community Engagement Programme) is a TUT initiative that connects classroom knowledge with real-world experience. We help Informatics students transition into the industry through hands-on internships, exposing them to the latest technologies, tools, and agile practices.
+          We’re also passionate about giving back — using smart IT solutions to uplift township communities, improve daily living, and support small businesses.
+          At ICEP, we grow talent, solve real problems, and build a better future through tech.
             </p>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
-
-    <!-- ======= Why Us Section ======= -->
-    <!-- <section id="why-us" class="why-us">
-      <div class="container">
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>01</span>
-            <h4>Lorem Ipsum</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>02</span>
-            <h4>Repellat Nihil</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Our programme is built around exposing students to real-world IT environments, where they gain hands-on experience with modern technologies, development tools, methodologies, and frameworks.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Beyond student development, ICEP is dedicated to driving meaningful change in township communities.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>ICEP also supports TUT by delivering fast, efficient digital solutions that address operational challenges, all within a structured system governed by clear business rules and best practices.</span></li>
+            </ul>
+            <p>
+              <p>ICEP is an informatics Community Engagement Programme initiated by the informatics
+        department of TUT.The initiative was established,among other objectives,to assist students who have completed all their </p>
+        theoretical modules in obtaining internships.These internships provide students with valuable 
+        exposure to real-world industry experiences and operations
             </p>
           </div>
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>03</span>
-            <h4> Ad ad velit qui</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis
-              sequi</p>
-          </div>
-
         </div>
 
       </div>
-    </section> -->
-    <!-- End Why Us Section -->
 
-    <!-- ======= Our Clients Section ======= -->
-    <section id="clients" class="clients">
+    </section><!-- /About Section -->
+
+   
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-newsletter">
       <div class="container">
-        <div class="section-title">
-          <h2>Our Clients</h2>
-          <div class="clients-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <div class="swiper-slide"><img src="assets/img/clients/tuteh.png"  class="img-fluid" alt="tuteh"></div>
-              <div class="swiper-slide"><img src="assets/img/clients/maish.png" class="img-fluid" alt="agile42"></div>
-              <div class="swiper-slide"><img src="assets/img/clients/tvh.png" class="img-fluid" alt="aws"></div>
-              <div class="swiper-slide"><img src="assets/img/clients/mabanyana.png" class="img-fluid" alt="iq"></div>
-              <div class="swiper-slide"><img src="assets/img/clients/20from20.jpeg" class="img-fluid" alt="20from20.jpeg"></div>
-              <div class="swiper-slide"><img src="assets/img/clients/nl.png" class="img-fluid" alt="nelaket"></div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-    </section><!-- End Our Clients Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Our main focal areas.</p>
-          <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4><a href="">Web Development</a></h4>
-                <p>Design and build web applications for internet,offer technical aspects combined with graphic
-                  designing.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-              data-aos-delay="200">
-              <div class="icon-box">
-                <div class="icon"><i class='bx bx-mobile-alt'></i></div>
-                <h4><a href="">Mobile App Development</a></h4>
-                <p>Design and build applications for mobile devices.</p>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-              data-aos-delay="300">
-              <div class="icon-box">
-                <div class="icon"><i class='bx bxs-business'></i></div>
-                <h4><a href="">Business Analysis</a></h4>
-                <p>Identifying business needs and determining solutions to business problems.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-              data-aos-delay="300">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bxs-bug"></i></div>
-                <h4><a href="">Software Testing</a></h4>
-                <p>Both automated and manual testing are used to make sure developers' software is functional and that
-                  any defects are fixed before it is made available to the general public.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>ICEP Team</h2>
-          <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/mash.jpg" alt="">
-                <h4>Mashitishi Phurutsi</h4>
-                <span><b>Chief Executive Officer</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/masedi.jpg" alt="">
-                <h4>Prince Masedi</h4>
-                <span><b>Manager</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/thulani.jpg" alt="">
-                <h4>Thulani Mthombeni</h4>
-                <span><b>Administrator</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/jessica.png" alt="">
-                <h4>Jessica Mokgabudi</h4>
-                <span><b>Business Analysis Lead</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/cindi.jpeg" alt="">
-                <h4>Nontethelelo Cindi</h4>
-                <span><b>Business Analysis Lead</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/thapelo.jpg" alt="">
-                <h4>Thapelo Aphane</h4>
-                <span><b>Scrum Master Specialist</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/gustav.jpeg" alt="">
-                <h4>Gustav Mamosadi</h4>
-                <span><b>Technical Lead (</b>eMalahleni<b>)</b></span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="member">
-                <img src="assets/img/team/dipono.jpg" alt="">
-                <h4>Dipono Manasoe</h4>
-                <span><b>Technical Lead (</b>Soshanguve<b>)</b></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Gallery Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-2023">2023</li>
-
-              <li data-filter=".filter-2024">2024</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 portfolio-item filter" id="filterGallery">
-            <div class="portfolio-wrap">
-              <img src="" class="img-fluid" alt="" id="galleryImg">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" id="title" title="2023 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-2024">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Gallery Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>02 Aubrey Matlala Road, Block K, Soshanguve<br>
-                  Building 18, TUT Shoshanguve South Campus<br>
-                  Pretoria, Gauteng<br>
-                  South Africa</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>admin@icep.co.za</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>012 382 9598</p>
-              </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2140.531805981317!2d28.096426707643413!3d-25.540673724283433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfcf9c4eedb233%3A0x9e2de5e61f9e48e7!2sTshwane%20University%20of%20Technology%20-%20Soshanguve%20South%20Campus%20-%20TUT!5e0!3m2!1sen!2sza!4v1594886902290!5m2!1sen!2sza"
-                frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6 mt-3 mt-md-0">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
             </form>
           </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">ICEP</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A02 Aubrey Matlala Road, Block K, Soshanguve</p>
+            <p>Building 18, TUT Shoshanguve South Campus</p>
+			<p>Pretoria, Gauteng</p>
+			<p>South Africa</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>012 382 9598</span></p>
+            <p><strong>Email:</strong> <span>admin@icep.co.za</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+           <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="team.html">Team</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="mobiledev-details.html">Mobile Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="ba-details.html">Business Analyst</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="softwaretesting-details.html">Software Testing</a></li>
+			<li><i class="bi bi-chevron-right"></i> <a href="gamedevelopment-details.html">Game Development</a></li>
+			<li><i class="bi bi-chevron-right"></i> <a href="ai-details.html">Artificial Intelligence(AI)</a></li>
+			<li><i class="bi bi-chevron-right"></i> <a href="ma-details.html">Machine Learning(ML)</a></li>
+			<li><i class="bi bi-chevron-right"></i> <a href="gameprograming-details.html">Game Programming</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Follow us on social media for updates, insights, and highlights from our projects, events, and community initiatives.</p>
+          <div class="social-links d-flex">
+            <a href="https://x.com/icep_tut25?s=11&t=InUd94ww-uVL9I2ans0vew"><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+			<a href="https://www.tiktok.com/@icep_tut25?_t=ZM-8vli56WVwlp&_r=1"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.instagram.com/icep_tut25/profilecard/?igsh=eXh3b3NncmF0c2th"><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </div>
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>ICEP</h3>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; 2024 <strong><span> Informatics Community Engagement Programme </span></strong>. All Rights Reserved
-
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Informatics Community Engagement Programme</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        
       </div>
     </div>
-  </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/icepcontent.js"></script>
-  <script src="assets/js/gallery.js"></script>
 
 </body>
 
