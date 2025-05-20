@@ -9,7 +9,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" />
@@ -36,7 +37,7 @@
             </div>
 
             <div class="card-body">
-                
+
                 <div class="row">
                     <!-- Left Column -->
                     <div class="col-md-6 left-column">
@@ -48,32 +49,39 @@
                         <!-- Last Name -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="lastname"><i class="fas fa-user"></i> Last Name</label>
-                            <input type="text" id="lastname" class="form-control" placeholder="e.g., Mahlangu" required />
+                            <input type="text" id="lastname" class="form-control" placeholder="e.g., Mahlangu"
+                                required />
                         </div>
                         <!-- ID Number -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="idno"><i class="fas fa-id-card"></i> ID Number</label>
-                            <input type="text" id="idno" class="form-control" placeholder="e.g., 9999999999999" required />
+                            <input type="text" id="idno" class="form-control" placeholder="e.g., 9999999999999"
+                                required />
                         </div>
                         <!-- Date of Birth -->
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="dob"><i class="fas fa-calendar-alt"></i> Date of Birth</label>
+                            <label class="form-label" for="dob"><i class="fas fa-calendar-alt"></i> Date of
+                                Birth</label>
                             <input type="date" id="dob" class="form-control" required />
                         </div>
                         <!-- Student Number -->
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="studNo"><i class="fas fa-id-badge"></i> Student Number</label>
-                            <input type="text" id="studNo" class="form-control" placeholder="e.g., 111111111" required />
+                            <label class="form-label" for="studNo"><i class="fas fa-id-badge"></i> Student
+                                Number</label>
+                            <input type="text" id="studNo" class="form-control" placeholder="e.g., 111111111"
+                                required />
                         </div>
                         <!-- Email -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="email"><i class="fas fa-envelope"></i> Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="e.g., mahlangu.joehn@tut.ac.za" required />
+                            <input type="email" id="email" class="form-control"
+                                placeholder="e.g., mahlangu.joehn@tut.ac.za" required />
                         </div>
                         <!-- Phone Number -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="phoneNo"><i class="fas fa-phone"></i> Phone Number</label>
-                            <input type="tel" id="phoneNo" class="form-control" placeholder="e.g., 0123456789" required />
+                            <input type="tel" id="phoneNo" class="form-control" placeholder="e.g., 0123456789"
+                                required />
                         </div>
                     </div>
 
@@ -85,75 +93,107 @@
                                 <label class="form-label" for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
                                 <select class="form-control" id="gender" required>
                                     <option disabled selected value="">---Select Gender---</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <!-- Campus -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="campus"><i class="fas fa-university"></i> Campus</label>
                                 <select class="form-control" id="campus" required>
-                                    <option disabled selected value="">---Select Campus---</option>
-                                    <option>Soshanguve</option>
-                                    <option>Emalahleni</option>
-                                    <option>Polokwane</option>
+                                    <!-- campus options here -->
+                                </select>
+                            </div>
+                            <!-- Course -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="course"><i class="fas fa-university"></i> Course</label>
+                                <select class="form-control" id="course" required>
+                                    <!-- course options here -->
                                 </select>
                             </div>
                             <!-- Outstanding Modules -->
                             <div class="form-outline mb-4">
-                                <label class="form-label"><i class="fas fa-exclamation-triangle"></i> Outstanding Modules</label><br />
+                                <label class="form-label"><i class="fas fa-exclamation-triangle"></i> Outstanding
+                                    Modules</label><br />
                                 <input type="radio" name="outstanding" value="Yes" required>
-                                <label style = "color:black; font-weight: bolder;">Yes</label>
+                                <label style="color:black; font-weight: bolder;">Yes</label>
                                 <input type="radio" name="outstanding" value="No">
-                                <label style = "color:black; font-weight: bolder;">No</label>
+                                <label style="color:black; font-weight: bolder;">No</label>
                             </div>
                             <!-- Home Address -->
                             <div class="form-outline mb-4">
                                 <label class="form-label"><i class="fas fa-home"></i> Home Address</label>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label class="form-label" for="houseNo"><i class="fas fa-house-user"></i> House No</label>
-                                        <input type="text" id="houseNo" class="form-control" placeholder="e.g., 3698" required />
+                                        <label class="form-label" for="houseNo"><i class="fas fa-house-user"></i> House
+                                            No</label>
+                                        <input type="text" id="houseNo" class="form-control" placeholder="e.g., 3698"
+                                            required />
                                     </div>
                                     <div class="col">
-                                        <label class="form-label" for="streetName"><i class="fas fa-road"></i> Street Name</label>
-                                        <input type="text" id="streetName" class="form-control" placeholder="e.g., Letswalo" required />
+                                        <label class="form-label" for="streetName"><i class="fas fa-road"></i> Street
+                                            Name</label>
+                                        <input type="text" id="streetName" class="form-control"
+                                            placeholder="e.g., Letswalo" required />
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label class="form-label" for="town"><i class="fas fa-city"></i> Town / Suburb</label>
-                                        <input type="text" id="town" class="form-control" placeholder="e.g., Soshanguve" required />
+                                        <label class="form-label" for="town"><i class="fas fa-city"></i> Town /
+                                            Suburb</label>
+                                        <input type="text" id="town" class="form-control" placeholder="e.g., Soshanguve"
+                                            required />
                                     </div>
                                     <div class="col">
-                                        <label class="form-label" for="code"><i class="fas fa-map-marker-alt"></i> Postal Code</label>
-                                        <input type="text" id="code" class="form-control" placeholder="e.g., 0123" required />
+                                        <label class="form-label" for="code"><i class="fas fa-map-marker-alt"></i>
+                                            Postal Code</label>
+                                        <input type="text" id="code" class="form-control" placeholder="e.g., 0123"
+                                            required />
                                     </div>
                                 </div>
                             </div>
                             <!-- Upload CV -->
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="fileInput"><i class="fas fa-cloud-upload-alt"></i> Upload CV</label>
-                                <input type="file" name="fileInput" id="fileInput" hidden />
-                                <label for="fileInput" class="btn btn-primary file-upload-label">Upload CV <i class="fas fa-cloud-upload-alt"></i></label>
-                                <span id="fileName">No File</span>
+                                <label class="form-label" for="fileInputCV">
+                                    <i class="fas fa-cloud-upload-alt"></i> Upload CV
+                                </label>
+                                <input type="file" name="fileInputCV" id="fileInputCV" hidden />
+                                <label for="fileInputCV" class="btn btn-primary file-upload-label">
+                                    Upload CV <i class="fas fa-cloud-upload-alt"></i>
+                                </label>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 0%; height: 10px;"></div>
+                                </div>
+                                <div class="progress-text" style="display: none;">0%</div>
+                                <span class="file-name">No File</span>
                             </div>
-                            <!-- Upload University WIL Recommendation Letter -->
+
+                            <!-- Upload WIL Letter -->
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="fileInput"><i class="fas fa-cloud-upload-alt"></i> Upload WIL Letter</label>
-                                <input type="file" name="fileInput" id="fileInput" hidden />
-                                <label for="fileInput" class="btn btn-primary file-upload-label">Upload Letter <i class="fas fa-cloud-upload-alt"></i></label>
-                                <span id="fileName">No File</span>
+                                <label class="form-label" for="fileInputWIL">
+                                    <i class="fas fa-cloud-upload-alt"></i> Upload WIL Letter
+                                </label>
+                                <input type="file" name="fileInputWIL" id="fileInputWIL" hidden />
+                                <label for="fileInputWIL" class="btn btn-primary file-upload-label">
+                                    Upload Letter <i class="fas fa-cloud-upload-alt"></i>
+                                </label>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 0%; height: 10px;"></div>
+                                </div>
+                                <div class="progress-text" style="display: none;">0%</div>
+                                <span class="file-name">No File</span>
                             </div>
+
                             <!-- Checkbox -->
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="accept" checked />
-                                <label style = "color:black; font-weight: bolder;">Create an account?</label>
+                                <input class="form-check-input" type="checkbox" id="accept"  />
+                                <label style="color:black; font-weight: bolder;">Create an account?</label>
                             </div>
                             <!-- Submit Button -->
                             <div class="form-outline mb-4">
-                                <button type="button" class="btn btn-primary btn-block" onclick="submitApplication()">Apply</button>
+                                <button type="button" class="btn btn-primary btn-block"
+                                    onclick="submitApplication()">Apply</button>
                             </div>
                         </div>
                     </div>
