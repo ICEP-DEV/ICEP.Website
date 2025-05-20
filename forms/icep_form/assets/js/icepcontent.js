@@ -1,6 +1,8 @@
 // Application form
 document.getElementById("dob").defaultValue = "2000-01-01";
 var fileName = "";
+var cv_file = "";
+var recommendation_file = "";
 
 
 function application() {
@@ -19,12 +21,12 @@ function submitApplication() {
   var phoneNo = document.getElementById("phoneNo").value;
   var campus = document.getElementById("campus").value;
   var course = document.getElementById("course").value;
-  var outstanding = document.getElementsByName("outstanding").value;
+  var outstanding = document.querySelector('input[name="outstanding"]:checked');
   var town = document.getElementById("town").value;
   var code = document.getElementById("code").value;
   var houseNo = document.getElementById("houseNo").value;
   var streetName = document.getElementById("streetName").value;
-  var accpt = document.getElementById("accept").value;
+  var accpt = document.querySelector('name="accept"]:checked');
   var gender = document.getElementById("gender").value;
 
 
@@ -32,19 +34,17 @@ function submitApplication() {
   idno = "1236547890123";
   firstname = "Kamo";
   lastname = "Mthethwa";
-  dob= "2002-01-01";
+  dob = "2002-01-01";
   studNo = "123456789";
-  email= "kamo@gmail.com";
+  email = "kamo@gmail.com";
   phoneNo = "0123456789";
   campus = "tut-ema";
   course = "	DPIT20";
-  outstanding = "No";
   town = "Sosha";
   code = "0152";
   houseNo = "1235";
-  streetName= "Tswelopele";
-  //accept = "true";
-   gender = "Male";
+  streetName = "Tswelopele";
+  gender = "Male";
 
 
 
@@ -102,7 +102,6 @@ function submitApplication() {
     return;
   }
 
-
   if (dob == "") {
     alert("Select date of birth")
     return;
@@ -117,9 +116,21 @@ function submitApplication() {
     alert("Student number should contain only number")
   }
 
+  if (!outstanding) {
+    alert('You have not yet selected the outsatnding modules');
+    return;
+  }
+
+  console.log(accpt);
+  
+  if(!accpt){
+    alert('You have not yet check to accept the terms and conditions');
+    return;
+  }
+
 
   var data = {
-    idno, firstname, lastname, dob, studNo, email, phoneNo, gender, campus, outstanding, town, code, houseNo, streetName, fileName, accpt
+    idno, firstname, lastname, dob, studNo, email, phoneNo, gender, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, accpt
   }
 
   console.log(data);
@@ -149,7 +160,7 @@ function getCampusDataAndSpecializations() {
   fetch('http://localhost:3001/api/getCourse')
     .then(response => response.json())
     .then(data => {
-      
+
       if (data.success) {
         var AllCourses = data.results
         var courses = `<option value='' disabled selected>---Select Course---</option>`
@@ -169,7 +180,6 @@ function getCampusDataAndSpecializations() {
 
 }
 
-
 // uploading files
 document.addEventListener('DOMContentLoaded', () => {
   const fileInputs = document.querySelectorAll('input[type="file"]');
@@ -183,58 +193,93 @@ document.addEventListener('DOMContentLoaded', () => {
     fInput.addEventListener('change', (event) => {
       const file = event.target.files[0];
 
-      if (file && file.type === 'application/pdf') {
-        const reader = new FileReader();
-        reader.onloadstart = () => {
-          pBar.style.width = '0%';
-          pText.style.display = 'block';
-          pText.innerText = '0%';
-        };
+      // Get the id of the selected input element (either fileInputCV or fileInputWIL)
+      const selectedInputId = event.target.id;
 
-        reader.onprogress = (event) => {
-          if (event.lengthComputable) {
-            const progress = (event.loaded / event.total) * 100;
-            pBar.style.width = `${progress}%`;
-            pText.innerText = `${Math.round(progress)}%`;
-          }
-        };
+      if (file) {
+        if (file.type === 'application/pdf') {
+          const reader = new FileReader();
 
-        reader.onload = () => {
-          const uploadTime = 4000;
-          const interval = 50;
-          const steps = uploadTime / interval;
-          let currentStep = 0;
+          reader.onloadstart = () => {
+            pBar.style.width = '0%';
+            pText.style.display = 'block';
+            pText.innerText = '0%';
+          };
 
-          const updateProgress = () => {
-            const progress = (currentStep / steps) * 100;
-            pBar.style.width = `${progress}%`;
-            pText.innerText = `${Math.round(progress)}%`;
-            currentStep++;
-
-            if (currentStep <= steps) {
-              setTimeout(updateProgress, interval);
-            } else {
-              pBar.style.width = '100%';
-              pText.innerText = '100%';
-              fName.innerText = `File Name: ${file.name}`;
+          reader.onprogress = (event) => {
+            if (event.lengthComputable) {
+              const progress = (event.loaded / event.total) * 100;
+              pBar.style.width = `${progress}%`;
+              pText.innerText = `${Math.round(progress)}%`;
             }
           };
 
-          setTimeout(updateProgress, interval);
-        };
+          reader.onload = () => {
+            const uploadTime = 4000;
+            const interval = 50;
+            const steps = uploadTime / interval;
+            let currentStep = 0;
 
-        reader.readAsDataURL(file);
-      } else {
-        alert('Please select a valid PDF file.');
-        fInput.value = '';
+            const updateProgress = () => {
+              const progress = (currentStep / steps) * 100;
+              pBar.style.width = `${progress}%`;
+              pText.innerText = `${Math.round(progress)}%`;
+              currentStep++;
+
+              if (currentStep <= steps) {
+                setTimeout(updateProgress, interval);
+              } else {
+                pBar.style.width = '100%';
+                pText.innerText = '100%';
+                fName.innerText = `File Name: ${file.name}`;
+
+                // Prepare the FormData object to upload the file
+                const formData = new FormData();
+                formData.append('file', file);
+
+                // Send the file to the server
+                fetch('http://localhost:3001/api/uploadFile', {
+                  method: 'POST',
+                  body: formData
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.success) {
+                      // Check which input was used and display the appropriate message
+                      if (selectedInputId === 'fileInputCV') {
+                        console.log('CV File uploaded');
+                        cv_file = data.link; // Store link to the uploaded CV
+                      } else if (selectedInputId === 'fileInputWIL') {
+                        console.log('WIL Letter uploaded');
+                        recommendation_file = data.link; // Store link to the uploaded WIL letter
+                      }
+                    } else {
+                      console.log(data.message);
+                      alert(data.message); // Show error message if file upload fails
+                    }
+                    console.log(data);
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while uploading the file.');
+                  });
+              }
+            };
+
+            setTimeout(updateProgress, interval);
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert('Please select a valid PDF file.');
+          fInput.value = ''; // Clear file input if file type is incorrect
+        }
       }
     });
   });
 });
 
-
-
-
-// invoke the functions
+// Invoke the functions
 getCampusDataAndSpecializations();
+
 
