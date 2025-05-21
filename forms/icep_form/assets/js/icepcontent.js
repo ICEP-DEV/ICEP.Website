@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
+ 
 // Invoke the functions
 getCampusDataAndSpecializations();
 
