@@ -26,7 +26,7 @@ function submitApplication() {
   var code = document.getElementById("code").value;
   var houseNo = document.getElementById("houseNo").value;
   var streetName = document.getElementById("streetName").value;
-  var accpt = document.querySelector('name="accept"]:checked');
+  // var accpt = document.querySelector('name="accept"]:checked');
   var gender = document.getElementById("gender").value;
 
 
@@ -50,10 +50,7 @@ function submitApplication() {
 
   var alphatesSpace = /^[a-zA-Z]+$/;
   var digits = /^\d+$/;
-
-  console.log(campus);
-  console.log(course);
-  //console.log(filterCampuses[0].campus_id)
+  var validateEmail = ""
 
 
   //  validate firstname
@@ -121,16 +118,20 @@ function submitApplication() {
     return;
   }
 
-  console.log(accpt);
-  
-  if(!accpt){
-    alert('You have not yet check to accept the terms and conditions');
+  if (recommendation_file == "" || cv_file == "") {
+    alert('All documents must be uploaded');
     return;
   }
+  // console.log(accpt);
+
+  // if(!accpt){
+  //   alert('You have not yet check to accept the terms and conditions');
+  //   return;
+  // }
 
 
   var data = {
-    idno, firstname, lastname, dob, studNo, email, phoneNo, gender, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, accpt
+    idno, firstname, lastname, dob, studNo, email, phoneNo, gender, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, //accpt
   }
 
   console.log(data);
