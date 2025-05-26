@@ -16,6 +16,22 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" />
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        #loader-popup .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -201,6 +217,15 @@
             </div>
         </div>
     </div>
+    <!-- Loader Popup -->
+    <div id="loader-popup" style="display: none;">
+        <div class="loader-overlay">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom JS -->
     <script src="assets/js/icepcontent.js"></script>
 </body>

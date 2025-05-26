@@ -12,6 +12,7 @@ function application() {
 
 // submit application
 function submitApplication() {
+  var student_id = document.getElementById("studNo").value;
   var idno = document.getElementById("idno").value;
   var firstname = document.getElementById("firstname").value;
   var lastname = document.getElementById("lastname").value;
@@ -29,22 +30,23 @@ function submitApplication() {
   // var accpt = document.querySelector('name="accept"]:checked');
   var gender = document.getElementById("gender").value;
 
+  console.log(student_id);
+
 
   //testing
-  idno = "1236547890123";
-  firstname = "Kamo";
-  lastname = "Mthethwa";
-  dob = "2002-01-01";
-  studNo = "123456789";
-  email = "kamo@gmail.com";
-  phoneNo = "0123456789";
-  campus = "tut-ema";
-  course = "	DPIT20";
-  town = "Sosha";
-  code = "0152";
-  houseNo = "1235";
-  streetName = "Tswelopele";
-  gender = "Male";
+  // student_id = "123456789"
+  // idno = "1236547890123";
+  // firstname = "Kamo";
+  // lastname = "Mthethwa";
+  // dob = "2002-01-01";
+  // studNo = "123456789";
+  // email = "kamo@gmail.com";
+  // phoneNo = "0123456789";
+  // town = "Sosha";
+  // code = "0152";
+  // houseNo = "1235";
+  // streetName = "Tswelopele";
+  // gender = "Male";
 
 
 
@@ -58,30 +60,30 @@ function submitApplication() {
     alert("Enter firstname")
     return;
   }
-  // if (firstname.length > 3) {
-  //   alert("firstname should contain at least 3 characters")
-  //   return;
-  // }
+  if (firstname.length > 3) {
+    alert("firstname should contain at least 3 characters")
+    return;
+  }
 
-  // if (!alphatesSpace.test(firstname)) {
-  //   alert("firstname should contail alphates/letters only")
-  //   return;
-  // }
+  if (!alphatesSpace.test(firstname)) {
+    alert("firstname should contail alphates/letters only")
+    return;
+  }
 
   //  validate lastname
   if (lastname == "") {
     alert("Enter lastname")
     return;
   }
-  // if (lastname.length > 3) {
-  //   alert("lastname should contain at least 3 characters")
-  //   return;
-  // }
+  if (lastname.length > 3) {
+    alert("lastname should contain at least 3 characters")
+    return;
+  }
 
-  // if (!alphatesSpace.test(lastname)) {
-  //   alert("lastname should contail alphates/letters only")
-  //   return;
-  // }
+  if (!alphatesSpace.test(lastname)) {
+    alert("lastname should contail alphates/letters only")
+    return;
+  }
 
 
   // Validate SA ID
@@ -130,11 +132,36 @@ function submitApplication() {
   // }
 
 
-  var data = {
-    idno, firstname, lastname, dob, studNo, email, phoneNo, gender, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, //accpt
+  var dataCollected = {
+    student_id, idno, firstname, lastname, dob, studNo, email, phoneNo, gender, course, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, //accpt
   }
 
-  console.log(data);
+  fetch('http://localhost:3001/api/student_application', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataCollected)
+  }).then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Show the loader popup
+        document.getElementById('loader-popup').style.display = 'block';
+
+        // Simulate form submission or AJAX call
+        setTimeout(() => {
+          document.getElementById('loader-popup').style.display = 'none';
+          alert("Application submitted successfully!");
+        }, 2000); // Simulate 2-second delay
+
+      } else {
+        alert(data.message); // Show error message if file upload fails
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred while uploading the information.');
+    });
 }
 
 // get all open courses and campuses
@@ -151,7 +178,7 @@ function getCampusDataAndSpecializations() {
         document.getElementById('campus').innerHTML = campuses;
       }
       else {
-        console.log(data.message)
+        // console.log(data.message)
         alert(data.message)
       }
       console.log(AllCampuses)
@@ -161,7 +188,6 @@ function getCampusDataAndSpecializations() {
   fetch('http://localhost:3001/api/getCourse')
     .then(response => response.json())
     .then(data => {
-
       if (data.success) {
         var AllCourses = data.results
         var courses = `<option value='' disabled selected>---Select Course---</option>`
@@ -171,10 +197,10 @@ function getCampusDataAndSpecializations() {
         document.getElementById('course').innerHTML = courses;
       }
       else {
-        console.log(data.message)
+        // console.log(data.message)
         alert(data.message)
       }
-      console.log(data)
+      // console.log(data)
     })
     .catch(error => console.error('Error:', error));
 
@@ -230,10 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
               if (currentStep <= steps) {
                 setTimeout(updateProgress, interval);
               } else {
-                pBar.style.width = '100%';
-                pText.innerText = '100%';
-                fName.innerText = `File Name: ${file.name}`;
-
                 // Prepare the FormData object to upload the file
                 const formData = new FormData();
                 formData.append('file', file);
@@ -246,12 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   .then(response => response.json())
                   .then(data => {
                     if (data.success) {
+                      pBar.style.width = '100%';
+                      pText.innerText = '100%';
+                      fName.innerText = `File Name: ${file.name}`;
                       // Check which input was used and display the appropriate message
                       if (selectedInputId === 'fileInputCV') {
-                        console.log('CV File uploaded');
+                        // console.log('CV File uploaded');
                         cv_file = data.link; // Store link to the uploaded CV
                       } else if (selectedInputId === 'fileInputWIL') {
-                        console.log('WIL Letter uploaded');
+                        // console.log('WIL Letter uploaded');
                         recommendation_file = data.link; // Store link to the uploaded WIL letter
                       }
                     } else {
@@ -266,7 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   });
               }
             };
-
             setTimeout(updateProgress, interval);
           };
 
@@ -279,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
- 
+
 // Invoke the functions
 getCampusDataAndSpecializations();
 
