@@ -4,11 +4,12 @@ var fileName = "";
 var cv_file = "";
 var recommendation_file = "";
 
+// var modal = document.getElementById("myModal");
+// modal.style.display = "block";
 
 function application() {
   window.open("https://forms.gle/ACfRkMGX8wL43GR79")
 }
-
 
 // submit application
 function submitApplication() {
@@ -30,23 +31,23 @@ function submitApplication() {
   // var accpt = document.querySelector('name="accept"]:checked');
   var gender = document.getElementById("gender").value;
 
-  console.log(student_id);
-
+  // Get the modal
+  var modal = document.getElementById("myModal");  
 
   //testing
-  // student_id = "123456789"
-  // idno = "1236547890123";
-  // firstname = "Kamo";
-  // lastname = "Mthethwa";
-  // dob = "2002-01-01";
-  // studNo = "123456789";
-  // email = "kamo@gmail.com";
-  // phoneNo = "0123456789";
-  // town = "Sosha";
-  // code = "0152";
-  // houseNo = "1235";
-  // streetName = "Tswelopele";
-  // gender = "Male";
+  student_id = "123456789"
+  idno = "1236547890123";
+  firstname = "Kamo";
+  lastname = "Mthethwa";
+  dob = "2002-01-01";
+  studNo = "123456789";
+  email = "kamo@gmail.com";
+  phoneNo = "0123456789";
+  town = "Sosha";
+  code = "0152";
+  houseNo = "1235";
+  streetName = "Tswelopele";
+  gender = "Male";
 
 
 
@@ -60,7 +61,8 @@ function submitApplication() {
     alert("Enter firstname")
     return;
   }
-  if (firstname.length > 3) {
+
+  if (firstname.length <= 3) {
     alert("firstname should contain at least 3 characters")
     return;
   }
@@ -75,7 +77,7 @@ function submitApplication() {
     alert("Enter lastname")
     return;
   }
-  if (lastname.length > 3) {
+  if (lastname.length <= 3) {
     alert("lastname should contain at least 3 characters")
     return;
   }
@@ -107,11 +109,11 @@ function submitApplication() {
   }
 
 
-  if (studNo == "") {
+  if (student_id == "") {
     alert("Enter student number");
     return;
   }
-  if (!studNo.match(digits)) {
+  if (!student_id.match(digits)) {
     alert("Student number should contain only number")
   }
 
@@ -135,6 +137,7 @@ function submitApplication() {
   var dataCollected = {
     student_id, idno, firstname, lastname, dob, studNo, email, phoneNo, gender, course, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, //accpt
   }
+  document.getElementById('loader-popup').style.display = 'block';
 
   fetch('http://localhost:3001/api/student_application', {
     method: 'POST',
@@ -146,16 +149,20 @@ function submitApplication() {
     .then(data => {
       if (data.success) {
         // Show the loader popup
-        document.getElementById('loader-popup').style.display = 'block';
-
         // Simulate form submission or AJAX call
         setTimeout(() => {
           document.getElementById('loader-popup').style.display = 'none';
           alert("Application submitted successfully!");
+          document.getElementById("studName").innerHTML = firstname+' '+lastname;
+          modal.style.display = "block";
         }, 2000); // Simulate 2-second delay
 
       } else {
-        alert(data.message); // Show error message if file upload fails
+        setTimeout(() => {
+          document.getElementById('loader-popup').style.display = 'none';
+          alert(data.message); // Show error message if data upload fails
+        }, 2000); // Simulate 2-second delay
+
       }
     })
     .catch(error => {
@@ -181,7 +188,6 @@ function getCampusDataAndSpecializations() {
         // console.log(data.message)
         alert(data.message)
       }
-      console.log(AllCampuses)
     })
     .catch(error => console.error('Error:', error));
 
