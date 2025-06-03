@@ -1,3 +1,7 @@
+BASE_API = 'https://icep-website-server.vercel.app/'
+// BASE_API = "http://54.72.134.194/"
+// BASE_API = "http://localhost:3001/"
+
 // Application form
 document.getElementById("dob").defaultValue = "2000-01-01";
 var fileName = "";
@@ -32,22 +36,22 @@ function submitApplication() {
   var gender = document.getElementById("gender").value;
 
   // Get the modal
-  var modal = document.getElementById("myModal");  
+  var modal = document.getElementById("myModal");
 
   //testing
-  student_id = "123456789"
-  idno = "1236547890123";
-  firstname = "Kamo";
-  lastname = "Mthethwa";
-  dob = "2002-01-01";
-  studNo = "123456789";
-  email = "kamo@gmail.com";
-  phoneNo = "0123456789";
-  town = "Sosha";
-  code = "0152";
-  houseNo = "1235";
-  streetName = "Tswelopele";
-  gender = "Male";
+  // student_id = "1234567563"
+  // idno = "1236547890123";
+  // firstname = "Kamo";
+  // lastname = "Mthethwa";
+  // dob = "2002-01-01";
+  // studNo = "123456789";
+  // email = "kamo@gmail.com";
+  // phoneNo = "0123456789";
+  // town = "Sosha";
+  // code = "0152";
+  // houseNo = "1235";
+  // streetName = "Tswelopele";
+  // gender = "Male";
 
 
 
@@ -139,7 +143,7 @@ function submitApplication() {
   }
   document.getElementById('loader-popup').style.display = 'block';
 
-  fetch('http://localhost:3001/api/student_application', {
+  fetch(BASE_API + 'api/student_application', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -153,7 +157,7 @@ function submitApplication() {
         setTimeout(() => {
           document.getElementById('loader-popup').style.display = 'none';
           alert("Application submitted successfully!");
-          document.getElementById("studName").innerHTML = firstname+' '+lastname;
+          document.getElementById("studName").innerHTML = firstname + ' ' + lastname;
           modal.style.display = "block";
         }, 2000); // Simulate 2-second delay
 
@@ -173,7 +177,7 @@ function submitApplication() {
 
 // get all open courses and campuses
 function getCampusDataAndSpecializations() {
-  fetch('http://localhost:3001/api/getCampuses')
+  fetch(BASE_API + 'api/getCampuses')
     .then(response => response.json())
     .then(data => {
       if (data.success) {
@@ -191,7 +195,7 @@ function getCampusDataAndSpecializations() {
     })
     .catch(error => console.error('Error:', error));
 
-  fetch('http://localhost:3001/api/getCourse')
+  fetch(BASE_API + 'api/getCourse')
     .then(response => response.json())
     .then(data => {
       if (data.success) {
@@ -267,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('file', file);
 
                 // Send the file to the server
-                fetch('http://localhost:3001/api/uploadFile', {
+                fetch(BASE_API + 'api/uploadFile', {
                   method: 'POST',
                   body: formData
                 })
