@@ -1,6 +1,6 @@
 BASE_API = 'https://icep-website-server.vercel.app/'
 // BASE_API = "http://54.72.134.194/"
-//  BASE_API = "http://localhost:3001/"
+// BASE_API = "http://localhost:3001/"
 
 // Application form
 document.getElementById("dob").defaultValue = "2000-01-01";
@@ -39,7 +39,7 @@ function submitApplication() {
   var modal = document.getElementById("myModal");
 
   //testing
-  // student_id = "1234567563"
+  // student_id = "1244577563"
   // idno = "1236547890123";
   // firstname = "Kamo";
   // lastname = "Mthethwa";
@@ -86,6 +86,11 @@ function submitApplication() {
     return;
   }
 
+  if (email == "") {
+    alert("Enter email")
+    return;
+  }
+
   if (!alphatesSpace.test(lastname)) {
     alert("lastname should contail alphates/letters only")
     return;
@@ -97,21 +102,26 @@ function submitApplication() {
     alert("Enter ID number")
     return;
   }
-  if (idno.length != 13) {
-    alert("SA Id should contain 13 Characters")
-    return;
-  }
+  // if (idno.length != 13) {
+  //   alert("SA Id should contain 13 Characters")
+  //   return;
+  // }
 
-  if (!idno.match(digits)) {
-    alert("SA Id should contain only number")
-    return;
-  }
+  // if (!idno.match(digits)) {
+  //   alert("SA Id should contain only number")
+  //   return;
+  // }
 
   if (dob == "") {
     alert("Select date of birth")
     return;
   }
 
+  if (gender == "") {
+    alert("Select gender")
+    return;
+  }
+  
 
   if (student_id == "") {
     alert("Enter student number");
@@ -119,6 +129,16 @@ function submitApplication() {
   }
   if (!student_id.match(digits)) {
     alert("Student number should contain only number")
+  }
+
+  if (campus == "") {
+    alert("Please Select campus");
+    return;
+  }
+
+  if (course == "") {
+    alert("Please Select course");
+    return;
   }
 
   if (!outstanding) {
@@ -141,6 +161,7 @@ function submitApplication() {
   var dataCollected = {
     student_id, idno, firstname, lastname, dob, studNo, email, phoneNo, gender, course, campus, outstanding: outstanding.value, town, code, houseNo, streetName, recommendation_file, cv_file, //accpt
   }
+  
   document.getElementById('loader-popup').style.display = 'block';
 
   fetch(BASE_API + 'api/student_application', {
