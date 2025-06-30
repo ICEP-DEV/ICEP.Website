@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Prepare the FormData object to upload the file
                 const formData = new FormData();
                 formData.append('file', file);
-                formData.append('folder', CVs);
+                formData.append('folder', 'CVs');
 
                 // Send the file to the server
                 fetch(BASE_API + 'api/upload', {
