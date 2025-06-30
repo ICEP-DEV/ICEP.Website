@@ -1,6 +1,6 @@
-BASE_API = 'https://server.icep.co.za/'
+// BASE_API = 'https://server.icep.co.za/'
 // BASE_API = "http://54.72.134.194/"
-// BASE_API = "http://localhost:3001/"
+ BASE_API = "http://localhost:3001/"
 
 // Application form
 document.getElementById("dob").defaultValue = "2000-01-01";
